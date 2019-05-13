@@ -56,15 +56,16 @@ public class Taboa extends javax.swing.JFrame {
 
         taboa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "NOME", "APELIDO", "CURSO"
             }
         ));
-        taboa.setColumnSelectionAllowed(true);
+        taboa.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        taboa.setCellSelectionEnabled(false);
+        taboa.setEditingColumn(1);
+        taboa.setEditingRow(1);
         jScrollPane1.setViewportView(taboa);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -140,7 +141,9 @@ public class Taboa extends javax.swing.JFrame {
         tabla [2] = (String) curso.getSelectedItem();
         
         DefaultTableModel ta = (DefaultTableModel) taboa.getModel();
+        
         ta.addRow(tabla);
+        
         
     }//GEN-LAST:event_aTaboaActionPerformed
 
